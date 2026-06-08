@@ -1,0 +1,6 @@
+relay_memory.db
+relay_memory.db-wal
+relay_memory.db-shm
+__pycache__/
+*.pyc
+.DS_Store
