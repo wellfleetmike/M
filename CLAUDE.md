@@ -42,5 +42,3 @@ python3 -m relay_memory stats
   README.md          -- repo description
   .gitignore         -- excludes db files and pycache
 ```
-dencies
-- Do not modify this file without explicit instruction
