@@ -1,0 +1,11 @@
+relay_memory.db
+relay_memory.db-wal
+relay_memory.db-shm
+__pycache__/
+*.pyc
+.DS_Store
+
+# bridge: plaintext never travels; only .age ciphertext is committed
+relay_bridge/**/*.json
+*.key
+imported.db
