@@ -42,3 +42,22 @@ python3 -m relay_memory stats
   README.md          -- repo description
   .gitignore         -- excludes db files and pycache
 ```
+
+## relay_comms (added 2026-09-13)
+
+Same repo, second package. File inboxes per seat, no daemon, no network.
+
+    PYTHONPATH=. python3 -m relay_comms send <seat> "<body>" [-p info|alert|urgent] [-a path]
+    PYTHONPATH=. python3 -m relay_comms receive [-r seat] [--consume]
+    PYTHONPATH=. python3 -m relay_comms ack [-r seat] [msg_id | --all]
+    PYTHONPATH=. python3 -m relay_comms broadcast "<body>"
+    PYTHONPATH=. python3 -m relay_comms status
+
+Seats: dispatch, librarian, builder, sentinel, grok. Mike is the operator and has
+no inbox; every seat reports to him in the open. A seat is detected from RELAY_ROLE
+or from its directory under ~/Desktop/nu (dispatch/, record/ for the librarian,
+builder/, sentinel/, grok/). Runtime state (inboxes/, snaps/, relay.log,
+messages.jsonl) is gitignored and stays on the box. relay_memory.db beside this
+file is the shared operator state store; each seat reads the newest entry on boot
+and saves one on close. No agents: every handoff is a file in an inbox that Mike
+can read.

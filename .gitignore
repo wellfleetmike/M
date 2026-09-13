@@ -9,3 +9,10 @@ __pycache__/
 relay_bridge/**/*.json
 *.key
 imported.db
+
+# relay_comms runtime state: inboxes, logs, snaps are local to the box
+inboxes/
+snaps/
+relay.log
+messages.jsonl
+relay_comms/__pycache__/
