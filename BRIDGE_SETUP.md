@@ -1,4 +1,4 @@
-# Encrypted Relay Bridge — Setup
+# Encrypted Relay Bridge -- Setup
 
 Git as untrusted transport; age as the trust boundary. GitHub (or any remote)
 only ever stores ciphertext. Tiers decide which nodes can read which memories.
@@ -10,7 +10,7 @@ only ever stores ciphertext. Tiers decide which nodes can read which memories.
        python3 bridge_crypt.py keygen > relay.key      # keep private, never commit
        # or, with the age binary:  age-keygen -o relay.key
 
-2. In the bridge repo, create tier recipient files (public keys only — these
+2. In the bridge repo, create tier recipient files (public keys only -- these
    ARE committed):
 
        relay_bridge/recipients/sovereign.txt   # pos + laptop pubkeys
@@ -47,7 +47,7 @@ your tier are skipped (that's the boundary working).
 Provide: a fine-grained PAT (contents read/write, this repo only) and the
 session-tier identity. The session can then clone, import its tier, work,
 export new memories tagged `tier:session`, and push. Rotate either credential
-any time — the session key is one line in recipients/session.txt.
+any time -- the session key is one line in recipients/session.txt.
 
 ## Key rotation
 
